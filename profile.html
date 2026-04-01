@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Менің профиль | QanDos</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Профиль бетінің стильдері */
+        .profile-header {
+            padding: 120px 0 0;
+            background: linear-gradient(135deg, var(--secondary), var(--dark));
+            min-height: 300px;
+        }
+        
+        .profile-cover {
+            background: white;
+            border-radius: 30px 30px 0 0;
+            padding: 50px;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 40px;
+            align-items: center;
+            box-shadow: 0 -20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .profile-avatar {
+            position: relative;
+            width: 150px;
+        }
+        
+        .avatar-circle {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+            font-weight: 700;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            animation: avatarPulse 2s infinite;
+        }
+        
+        @keyframes avatarPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .blood-badge {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background: var(--primary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(230,57,70,0.3);
+            animation: badgeGlow 2s infinite;
+        }
+        
+        @keyframes badgeGlow {
+            0%, 100% { box-shadow: 0 5px 15px rgba(230,57,70,0.3); }
+            50% { box-shadow: 0 5px 25px rgba(230,57,70,0.6); }
+        }
+        
+        .profile-title h1 {
+            font-size: 36px;
+            color: var(--secondary);
+            margin-bottom: 10px;
+            animation: slideInRight 0.5s;
+        }
+        
+        .profile-title p {
+            color: var(--gray);
+            margin-bottom: 5px;
+            animation: slideInRight 0.5s 0.1s both;
+        }
+        
+        .profile-stats {
+            display: flex;
+            gap: 40px;
+            animation: slideInRight 0.5s 0.2s both;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat h3 {
+            font-size: 32px;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .stat p {
+            color: var(--gray);
+            font-size: 14px;
+        }
+        
+        .profile-content {
+            padding: 60px 0;
+            background: #f8f9fa;
+        }
+        
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+        }
+        
+        .sidebar-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            transition: all 0.3s;
+        }
+        
+        .sidebar-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .sidebar-card h3 {
+            font-size: 18px;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary);
+            display: inline-block;
+        }
+        
+        .info-list {
+            margin-bottom: 20px;
+        }
+        
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px dashed #eee;
+        }
+        
+        .info-item .label {
+            color: var(--gray);
+            font-weight: 500;
+        }
+        
+        .info-item .value {
+            color: var(--dark);
+            font-weight: 600;
+        }
+        
+        .blood-type {
+            color: var(--primary);
+            font-weight: 700;
+        }
+        
+        .main-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            transition: all 0.3s;
+        }
+        
+        .main-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .main-card h3 {
+            font-size: 18px;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary);
+            display: inline-block;
+        }
+        
+        .donation-timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-bottom: 30px;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: -30px;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px var(--primary);
+        }
+        
+        .timeline-item:not(:last-child)::before {
+            content: '';
+            position: absolute;
+            left: -24px;
+            top: 15px;
+            width: 2px;
+            height: calc(100% - 15px);
+            background: linear-gradient(to bottom, var(--primary), transparent);
+        }
+        
+        .timeline-content {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        
+        .timeline-content h4 {
+            color: var(--secondary);
+            margin-bottom: 5px;
+        }
+        
+        .timeline-content p {
+            color: var(--gray);
+            font-size: 14px;
+        }
+        
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        
+        .achievement {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        
+        .achievement:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+        }
+        
+        .achievement i {
+            font-size: 30px;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .achievement:hover i {
+            color: white;
+        }
+        
+        .achievement p {
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .notifications {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .notification-item {
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s;
+        }
+        
+        .notification-item:hover {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+        }
+        
+        .notification-item i {
+            color: var(--primary);
+            font-size: 20px;
+        }
+        
+        .notification-item:hover i {
+            color: white;
+        }
+        
+        .notification-item small {
+            color: var(--gray);
+            font-size: 12px;
+            margin-left: auto;
+        }
+        
+        .notification-item:hover small {
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .btn-block {
+            width: 100%;
+            margin-top: 15px;
+        }
+        
+        @media (max-width: 992px) {
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-cover {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .profile-stats {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .profile-cover {
+                padding: 30px;
+            }
+            
+            .achievements-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>Qan<span>Dos</span></h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Басты бет</a></li>
+                <li><a href="donors.html">Донорлар</a></li>
+                <li><a href="register.html">Тіркелу</a></li>
+                <li><a href="profile.html" class="active">Менің профиль</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Profile Header -->
+    <section class="profile-header">
+        <div class="container">
+            <div class="profile-cover">
+                <div class="profile-avatar animate-pop">
+                    <div class="avatar-circle">
+                        <span>М</span>
+                    </div>
+                    <div class="blood-badge">
+                        <i class="fas fa-tint"></i> II+
+                    </div>
+                </div>
+                <div class="profile-title">
+                    <h1>Марлен</h1>
+                    <p><i class="fas fa-map-marker-alt"></i> Астана, Қазақстан</p>
+                    <p><i class="fas fa-calendar-alt"></i> Қосылған: Наурыз 2024</p>
+                </div>
+                <div class="profile-stats">
+                    <div class="stat">
+                        <h3>3</h3>
+                        <p>Қан тапсырған</p>
+                    </div>
+                    <div class="stat">
+                        <h3>9</h3>
+                        <p>Өмір сақтаған</p>
+                    </div>
+                    <div class="stat">
+                        <h3>1</h3>
+                        <p>Жыл донор</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profile Content -->
+    <section class="profile-content">
+        <div class="container">
+            <div class="profile-grid">
+                <div class="profile-sidebar">
+                    <div class="sidebar-card animate-left">
+                        <h3><i class="fas fa-id-card"></i> Жеке ақпарат</h3>
+                        <div class="info-list">
+                            <div class="info-item">
+                                <span class="label">Толық аты:</span>
+                                <span class="value">Марлен</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Туған күн:</span>
+                                <span class="value">15.05.1995</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Қан тобы:</span>
+                                <span class="value blood-type">II+</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Телефон:</span>
+                                <span class="value">+7 777 123 45 67</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Email:</span>
+                                <span class="value">marlen@email.com</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Мекен-жай:</span>
+                                <span class="value">Астана, Республика 15</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-secondary btn-block"><i class="fas fa-edit"></i> Өңдеу</button>
+                    </div>
+                    
+                    <div class="sidebar-card">
+                        <h3><i class="fas fa-bell"></i> Хабарландырулар</h3>
+                        <div class="notifications">
+                            <div class="notification-item">
+                                <i class="fas fa-tint"></i>
+                                <p>Сіздің қаныңыздың тобына сәйкес Астанада сұраныс бар</p>
+                                <small>2 сағат бұрын</small>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-calendar"></i>
+                                <p>Келесі қан тапсыруға 2 апта қалды</p>
+                                <small>5 күн бұрын</small>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-medal"></i>
+                                <p>Құрметті донор атағына ұсынылдыңыз</p>
+                                <small>1 апта бұрын</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="        -main">
+                    <div class="main-card animate-right">
+                        <h3><i class="fas fa-history"></i> Қан тапсыру тарихы</h3>
+                        <div class="donation-timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h4>15 Қаңтар 2024</h4>
+                                    <p>Астана қалалық қан орталығы ·

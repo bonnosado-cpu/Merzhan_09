@@ -1,0 +1,183 @@
+    <!DOCTYPE html>
+    <html lang="kk">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Донорлар | QanDos</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <h1>Qan<span>Dos</span></h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Басты бет</a></li>
+                    <li><a href="donors.html" class="active">Донорлар</a></li>
+                    <li><a href="register.html">Тіркелу</a></li>
+                    <li><a href="profile.html">Менің профиль</a></li>
+                </ul>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Page Header -->
+        <section class="page-header" style="background: linear-gradient(135deg, #E63946, #C1121F); color:white; padding:120px 0 60px; text-align:center;">
+            <div class="container">
+                <h1 style="font-size:48px;">Қан донорлары</h1>
+                <p style="font-size:18px;">Қазақстанның түкпір-түкпірінен донорлар</p>
+            </div>
+        </section>
+
+        <!-- Қан топтары бойынша статистика -->
+        <section style="padding: 40px 0; background: white;">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 30px; color: #1D3557;">Қан топтары бойынша донорлар</h2>
+                <div style="display: grid; grid-template-columns: repeat(8, 1fr); gap: 10px;">
+                    <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 10px; cursor: pointer;" onclick="filterBlood('I+')">
+                        <span style="font-weight:700; color:#E63946;">I+</span><br>
+                        <span id="count-I+">0</span>
+                    </div>
+                    <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 10px; cursor: pointer;" onclick="filterBlood('I-')">
+                        <span style="font-weight:700; color:#E63946;">I-</span><br>
+                        <span id="count-I-">0</span>
+                    </div>
+                    <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 10px; cursor: pointer;" onclick="filterBlood('II+')">
+                        <span style="font-weight:700; color:#457B9D;">II+</span><br>
+                        <span id="count-II+">0</span>
+                    </div>
+                    <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 10px; cursor: pointer;" onclick="filterBlood('II-')">
+                        <span style="font-weight:700; color:#457B9D;">II-</span><br>
+                        <span id="count-II-">0</span>
+                    </div>
+                    <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 10px; cursor: pointer;" onclick="filterBlood('III+')">
+                        <span style="font-weight:700; color:#2A9D8F;">III+</span><br>
+                        <span id="count-III+">0</span>
+                    </div>
+                    <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 10px; cursor: pointer;" onclick="filterBlood('III-')">
+                        <span style="font-weight:700; color:#2A9D8F;">III-</span><br>
+                        <span id="count-III-">0</span>
+                    </div>
+                    <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 10px; cursor: pointer;" onclick="filterBlood('IV+')">
+                        <span style="font-weight:700; color:#E9C46A;">IV+</span><br>
+                        <span id="count-IV+">0</span>
+                    </div>
+                    <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 10px; cursor: pointer;" onclick="filterBlood('IV-')">
+                        <span style="font-weight:700; color:#E9C46A;">IV-</span><br>
+                        <span id="count-IV-">0</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filters -->
+        <section class="filters-section" style="padding: 30px 0; background: white; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
+            <div class="container">
+                <div style="display: flex; gap: 20px; align-items: flex-end;">
+                    <div style="flex:1;">
+                        <label><i class="fas fa-filter"></i> Қан тобы:</label>
+                        <select id="bloodFilter" class="filter-select" style="width:100%; padding:12px;">
+                            <option value="all">Барлық қан топтары</option>
+                            <option value="I+">I+</option>
+                            <option value="I-">I-</option>
+                            <option value="II+">II+</option>
+                            <option value="II-">II-</option>
+                            <option value="III+">III+</option>
+                            <option value="III-">III-</option>
+                            <option value="IV+">IV+</option>
+                            <option value="IV-">IV-</option>
+                        </select>
+                    </div>
+                    <div style="flex:1;">
+                        <label><i class="fas fa-city"></i> Қала:</label>
+                        <select id="cityFilter" class="filter-select" style="width:100%; padding:12px;">
+                            <option value="all">Барлық қалалар</option>
+                            <option value="Астана">Астана</option>
+                            <option value="Алматы">Алматы</option>
+                            <option value="Шымкент">Шымкент</option>
+                            <option value="Қарағанды">Қарағанды</option>
+                            <option value="Ақтөбе">Ақтөбе</option>
+                            <option value="Тараз">Тараз</option>
+                            <option value="Павлодар">Павлодар</option>
+                            <option value="Өскемен">Өскемен</option>
+                            <option value="Семей">Семей</option>
+                            <option value="Атырау">Атырау</option>
+                            <option value="Қостанай">Қостанай</option>
+                            <option value="Қызылорда">Қызылорда</option>
+                            <option value="Ақтау">Ақтау</option>
+                            <option value="Талдықорған">Талдықорған</option>
+                            <option value="Орал">Орал</option>
+                            <option value="Петропавл">Петропавл</option>
+                            <option value="Көкшетау">Көкшетау</option>
+                            <option value="Жезқазған">Жезқазған</option>
+                            <option value="Балқаш">Балқаш</option>
+                            <option value="Риддер">Риддер</option>
+                        </select>
+                    </div>
+                    <div>
+                        <button id="searchBtn" class="btn btn-primary"><i class="fas fa-search"></i> Іздеу</button>
+                        <button id="resetBtn" class="btn btn-secondary"><i class="fas fa-redo"></i> Скинуть</button>
+                    </div>
+                </div>
+                <div class="active-filters" style="margin-top:20px;">
+                    <span>Белсенді сүзгілер: </span>
+                    <span class="filter-tag" id="activeBloodTag">Барлық қан топтары</span>
+                    <span class="filter-tag" id="activeCityTag">Барлық қалалар</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Donors Grid -->
+        <section class="donors-grid-section" style="padding: 60px 0;">
+            <div class="container">
+                <div class="donors-grid" id="donorsGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px;">
+                    <!-- JavaScript арқылы толтырылады -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer (дәл register.html-тегідей) -->
+        <footer class="footer" style="background: linear-gradient(135deg, #1D3557, #0B1E2E); color:white; padding:60px 0 20px;">
+            <div class="container">
+                <div class="footer-content" style="display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px;">
+                    <div>
+                        <h2 style="font-size:32px;">Qan<span style="color:#E63946;">Dos</span></h2>
+                        <p style="opacity:0.7;">Қан донорлары мен мұқтаж адамдарды байланыстыратын платформа.</p>
+                    </div>
+                    <div>
+                        <h3>Бөлімдер</h3>
+                        <ul style="list-style:none; padding:0;">
+                            <li><a href="index.html" style="color:rgba(255,255,255,0.7);">Басты бет</a></li>
+                            <li><a href="donors.html" style="color:rgba(255,255,255,0.7);">Донорлар</a></li>
+                            <li><a href="register.html" style="color:rgba(255,255,255,0.7);">Тіркелу</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Ақпарат</h3>
+                        <ul style="list-style:none; padding:0;">
+                            <li><a href="#" style="color:rgba(255,255,255,0.7);">Ережелер</a></li>
+                            <li><a href="#" style="color:rgba(255,255,255,0.7);">Қан орталықтары</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Байланыс</h3>
+                        <p><i class="fas fa-phone"></i> +7 (7172) 123-456</p>
+                        <p><i class="fas fa-envelope"></i> info@qandos.kz</p>
+                    </div>
+                </div>
+                <div style="text-align:center; margin-top:40px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.1);">
+                    © 2024 QanDos. Барлық құқықтар қорғалған.
+                </div>
+            </div>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
+    </html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QanDos - Қан Донорлары Платформасы</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
+        header { background-color: #d32f2f; color: white; padding: 20px; text-align: center; }
+        nav { background-color: #b71c1c; padding: 10px; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; }
+        section { padding: 20px; }
+        .animation { animation: pulse 2s infinite; }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .blood-drop {
+            width: 50px; height: 70px; background: red; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; 
+            position: relative; margin: 20px auto; animation: drop 2s infinite;
+        }
+        @keyframes drop {
+            0% { top: 0; }
+            100% { top: 20px; }
+        }
+        form { max-width: 400px; margin: auto; }
+        input { display: block; width: 100%; margin: 10px 0; padding: 10px; }
+        button { background-color: #d32f2f; color: white; border: none; padding: 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>QanDos</h1>
+        <p>Қан донорлары мен қанға мұқтаж адамдарды координациялайтын платформа</p>
+    </header>
+    <nav>
+        <a href="#home">Басты бет</a>
+        <a href="#donors">Донорлар</a>
+        <a href="#register">Тіркелу</a>
+    </nav>
+    <section id="home">
+        <h2>Басты бет</h2>
+        <p>Қан донациясы – өмірді құтқарудың маңызды жолы. Қазақстанда жыл сайын мыңдаған адам қанға мұқтаж болады. QanDos арқылы донор болып, басқаларға көмектесіңіз.</p>
+        <p>Статистика: Қазақстанда 2025 жылы 500,000-нан астам қан донациясы жасалған. Сіздің қаныңыз 3 адамның өмірін құтқара алады.</p>
+        <div class="blood-drop animation"></div>
+    </section>
+    <section id="donors">
+        <h2>Донорлар</h2>
+        <p>Мұнда тіркелген донорлардың тізімі. Қан тобы, орналасқан жері және байланыс ақпараты көрсетілген.</p>
+        <ul>
+            <li>Аты: Ерлан, Қан тобы: A+, Орналасуы: Ақтөбе, Тел: +7 XXX XXX XX XX</li>
+            <li>Аты: Айгүл, Қан тобы: O-, Орналасуы: Алматы, Тел: +7 XXX XXX XX XX</li>
+            <!-- Қосымша донорлар қосуға болады -->
+        </ul>
+        <p>Донор болу үшін тіркеліңіз. Донорлықтың пайдасы: Денсаулықты тексеру, иммунитетті күшейту, және моральдық қанағат.</p>
+    </section>
+    <section id="register">
+        <h2>Тіркелу</h2>
+        <p>Донор немесе қан алушы ретінде тіркеліңіз. Сіздің атыңыз: Azam</p>
+        <form>
+            <input type="text" placeholder="Аты" value="Azam">
+            <input type="email" placeholder="Email">
+            <input type="text" placeholder="Қан тобы (A+, O- т.б.)">
+            <input type="text" placeholder="Орналасқан жері (Ақтөбе)">
+            <button type="submit" class="animation">Тіркелу</button>
+        </form>
+        <p>Тіркелу процесі: 1. Форманы толтырыңыз. 2. Растау email алыңыз. 3. Донорлыққа дайын болыңыз.</p>
+    </section>
+</body>
+</html>

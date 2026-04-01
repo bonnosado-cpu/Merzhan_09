@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QanDos | Қан донорлары платформасы</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Hero бөліміндегі мәтінге анимация */
+        .hero-content h1 span {
+            display: inline-block;
+            animation: wordPop 1.2s ease-in-out infinite alternate;
+        }
+        @keyframes wordPop {
+            0% { transform: scale(1); opacity: 0.8; text-shadow: 0 0 5px rgba(230,57,70,0.3); }
+            100% { transform: scale(1.05); opacity: 1; text-shadow: 0 0 15px rgba(230,57,70,0.7); }
+        }
+        .hero-content p {
+            animation: fadeInUp 1.5s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>Qan<span>Dos</span></h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Басты бет</a></li>
+                <li><a href="donors.html">Донорлар</a></li>
+                <li><a href="register.html">Тіркелу</a></li>
+                <li><a href="profile.html">Менің профиль</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content animate-hero">
+                <h1 class="glitch-text">Қан тапсыру – <br><span>өмір сыйлау</span></h1>
+                <p>QanDos арқылы сіз донор бола аласыз немесе мұқтаж жандарға көмектесе аласыз. Біз біргеміз!</p>
+                <div class="hero-buttons">
+                    <a href="register.html" class="btn btn-primary pulse">Донор болу</a>
+                    <a href="donors.html" class="btn btn-secondary">Донорларды көру</a>
+                </div>                                                                                                                                                                
+            </div>
+            <div class="hero-image animate-float">
+    <img src="https://cdn-icons-png.flaticon.com/512/9255/9255161.png" alt="Ваше фото">
+</div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="statistics">
+        <div class="container">
+            <h2 class="section-title">Қан донорлығы <span>статистикасы</span></h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <i class="fas fa-tint"></i>
+                    <h3><span class="counter" data-target="1247">0</span>+</h3>
+                    <p>Донорлар</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3><span class="counter" data-target="856">0</span>+</h3>
+                    <p>Құтқарылған өмір</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-hospital"></i>
+                    <h3><span class="counter" data-target="23">0</span></h3>
+                    <p>Қалалар</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-users"></i>
+                    <h3><span class="counter" data-target="389">0</span></h3>
+                    <p>Белсенді донорлар</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Information Section -->
+    <section class="info-section">
+        <div class="container">
+            <h2 class="section-title">Неліктен <span>донор болу керек?</span></h2>
+            <div class="info-grid">
+                <div class="info-card slide-up">
+                    <i class="fas fa-heart"></i>
+                    <h3>Өмір сақтау</h3>
+                    <p>Бір рет қан тапсыру арқылы сіз үш адамның өмірін сақтай аласыз. Қан донорлығы - ең жоғары гуманизм көрінісі.</p>
+                </div>
+                <div class="info-card slide-up">
+                    <i class="fas fa-flask"></i>
+                    <h3>Денсаулықты тексеру</h3>
+                    <p>Қан тапсырар алдында толық медициналық тексеруден өтесіз. Бұл сіздің денсаулығыңызды бақылауға мүмкіндік береді.</p>
+                </div>
+                <div class="info-card slide-up">
+                    <i class="fas fa-clock"></i>
+                    <h3>Қан жаңаруы</h3>
+                    <p>Қан тапсыру қанның жаңаруына ықпал етеді, иммунитетті нығайтады және жүрек-қан тамырлары ауруларының қаупін азайтады.</p>
+                </div>
+                <div class="info-card slide-up">
+                    <i class="fas fa-star"></i>
+                    <h3>Моральдық қанағат</h3>
+                    <p>Біреудің өмірін сақтауға көмектескенде алатын рухани рахатты ешнәрсемен салыстыруға келмейді.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blood Types Section -->
+    <section class="blood-types-section">
+        <div class="container">
+            <h2 class="section-title">Қан топтарының <span>үйлесімділігі</span></h2>
+            <div class="blood-grid">
+                <div class="blood-card">
+                    <div class="blood-icon">0(I)</div>
+                    <p>Әмбебап донор</p>
+                    <small>Барлық топтарға бере алады</small>
+                </div>
+                <div class="blood-card">
+                    <div class="blood-icon">A(II)</div>
+                    <p>A, AB топтарына</p>
+                    <small>0, A қан топтарынан алады</small>
+                </div>
+                <div class="blood-card">
+                    <div class="blood-icon">B(III)</div>
+                    <p>B, AB топтарына</p>
+                    <small>0, B қан топтарынан алады</small>
+                </div>
+                <div class="blood-card">
+                    <div class="blood-icon">AB(IV)</div>
+                    <p>Тек AB тобына</p>
+                    <small>Әмбебап реципиент</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Info Section -->
+    <section class="additional-info">
+        <div class="container">
+            <h2 class="section-title">Маңызды <span>ақпарат</span></h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h3>Кім донор бола алады?</h3>
+                    </div>
+                    <p>18 бен 60 жас аралығындағы, салмағы 50 кг-нан жоғары, созылмалы аурулары жоқ, сау адамдар донор бола алады.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h3>Қан тапсыруға қарсы көрсетілімдер?</h3>
+                    </div>
+                    <p>АИТВ, гепатит B/C, безгек, туберкулез, қатерлі ісік, жүрек-қан тамырлары аурулары.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h3>Қан тапсыру жиілігі?</h3>
+                    </div>
+                    <p>Ерлер 2 айда 1 рет, әйелдер 3 айда 1 рет қан тапсыра алады. Жылына ерлер 5 рет, әйелдер 4 ретке дейін.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h3>Донорға қандай жеңілдіктер?</h3>
+                    </div>
+                    <p>Қан тапсырған күні ақылы демалыс, ақшалай өтемақы, арнайы тамақтану, төсбелгі және құрмет грамоталары.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Сандар анимациясы үшін скрипт -->
+    <script>
+        function animateNumbers() {
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                let current = 0;
+                const increment = target / 100;
+                function update() {
+                    current += increment;
+                    if (current < target) {
+                        counter.innerText = Math.ceil(current);
+                        requestAnimationFrame(update);
+                    } else {
+                        counter.innerText = target;
+                    }
+                }
+                update();
+            });
+        }
+
+        const statsSection = document.querySelector('.statistics');
+        if (statsSection) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateNumbers();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+            observer.observe(statsSection);
+        }
+    </script>
+</body>
+</html>

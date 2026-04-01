@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тіркелу | QanDos</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>Qan<span>Dos</span></h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Басты бет</a></li>
+                <li><a href="donors.html">Донорлар</a></li>
+                <li><a href="register.html" class="active">Тіркелу</a></li>
+                <li><a href="profile.html">Менің профиль</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Register Hero -->
+    <section class="register-hero">
+        <div class="container">
+            <div class="welcome-message">
+                <i class="fas fa-hand-holding-heart"></i>
+                <h1>Қош келдіңіз, <span class="user-name">Жаңа донор!</span></h1>
+                <p>Сіздің донорлыққа тіркелу формаңыз</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Register Form -->
+    <section class="register-section">
+        <div class="container">
+            <div class="register-container">
+                <div class="register-header">
+                    <h2>Донорлыққа тіркелу</h2>
+                    <p>Барлық өрістерді толтырыңыз</p>
+                </div>
+                <form id="registerForm" class="register-form animate-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fas fa-user"></i> Толық аты-жөніңіз</label>
+                            <input type="text" id="fullname" placeholder="Мысалы: Марат Оспанов" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-calendar"></i> Туған күн</label>
+                            <input type="date" id="birthdate" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fas fa-tint"></i> Қан тобы (санмен)</label>
+                            <select id="bloodType" required>
+                                <option value="">Қан тобын таңдаңыз</option>
+                                <option value="I+">I+ (0(I) Rh+)</option>
+                                <option value="I-">I- (0(I) Rh-)</option>
+                                <option value="II+">II+ (A(II) Rh+)</option>
+                                <option value="II-">II- (A(II) Rh-)</option>
+                                <option value="III+">III+ (B(III) Rh+)</option>
+                                <option value="III-">III- (B(III) Rh-)</option>
+                                <option value="IV+">IV+ (AB(IV) Rh+)</option>
+                                <option value="IV-">IV- (AB(IV) Rh-)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-city"></i> Қала</label>
+                            <select id="city" required>
+                                <option value="">Қаланы таңдаңыз</option>
+                                <option value="Астана">Астана</option>
+                                <option value="Алматы">Алматы</option>
+                                <option value="Шымкент">Шымкент</option>
+                                <option value="Қарағанды">Қарағанды</option>
+                                <option value="Ақтөбе">Ақтөбе</option>
+                                <option value="Тараз">Тараз</option>
+                                <option value="Павлодар">Павлодар</option>
+                                <option value="Өскемен">Өскемен</option>
+                                <option value="Семей">Семей</option>
+                                <option value="Атырау">Атырау</option>
+                                <option value="Қостанай">Қостанай</option>
+                                <option value="Қызылорда">Қызылорда</option>
+                                <option value="Ақтау">Ақтау</option>
+                                <option value="Талдықорған">Талдықорған</option>
+                                <option value="Орал">Орал</option>
+                                <option value="Петропавл">Петропавл</option>
+                                <option value="Көкшетау">Көкшетау</option>
+                                <option value="Жезқазған">Жезқазған</option>
+                                <option value="Балқаш">Балқаш</option>
+                                <option value="Риддер">Риддер</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fas fa-phone"></i> Телефон номер</label>
+                            <input type="tel" id="phone" placeholder="+7 (___) ___-__-__" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-envelope"></i> Email</label>
+                            <input type="email" id="email" placeholder="example@mail.com" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label><i class="fas fa-address-card"></i> Мекен-жайыңыз</label>
+                            <input type="text" id="address" placeholder="Көше, үй, пәтер" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fas fa-weight"></i> Салмағыңыз (кг)</label>
+                            <input type="number" id="weight" placeholder="70" min="50" max="150" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-venus-mars"></i> Жынысыңыз</label>
+                            <select id="gender" required>
+                                <option value="">Таңдаңыз</option>
+                                <option value="Ер">Ер</option>
+                                <option value="Әйел">Әйел</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group terms">
+                        <input type="checkbox" id="agree" required>
+                        <label for="agree">Мен донорлық ережелерімен таныстым және келісемін</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary pulse btn-block">
+                        <i class="fas fa-check-circle"></i> Тіркелу
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Қосымша ақпарат блогы -->
+    <section class="additional-info register-info" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 60px 0;">
+        <div class="container">
+            <h2 class="section-title">Неліктен <span>бізді таңдайды?</span></h2>
+            <div style="display: grid; grid-template-columns: repeat(3,1fr); gap:30px; margin-top:40px;">
+                <div class="info-card-small">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Құпиялылық</h4>
+                    <p>Сіздің жеке мәліметтеріңіз толығымен қорғалған.</p>
+                </div>
+                <div class="info-card-small">
+                    <i class="fas fa-clock"></i>
+                    <h4>Жылдам тіркелу</h4>
+                    <p>2 минут ішінде донор бола аласыз.</p>
+                </div>
+                <div class="info-card-small">
+                    <i class="fas fa-certificate"></i>
+                    <h4>Ресми платформа</h4>
+                    <p>Денсаулық сақтау министрлігімен бірге.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" style="background: linear-gradient(135deg, #1D3557, #0B1E2E); color:white; padding:60px 0 20px;">
+        <div class="container">
+            <div class="footer-content" style="display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px;">
+                <div>
+                    <h2 style="font-size:32px;">Qan<span style="color:#E63946;">Dos</span></h2>
+                    <p style="opacity:0.7;">Қан донорлары мен мұқтаж адамдарды байланыстыратын платформа.</p>
+                </div>
+                <div>
+                    <h3>Бөлімдер</h3>
+                    <ul style="list-style:none; padding:0;">
+                        <li><a href="index.html" style="color:rgba(255,255,255,0.7);">Басты бет</a></li>
+                        <li><a href="donors.html" style="color:rgba(255,255,255,0.7);">Донорлар</a></li>
+                        <li><a href="register.html" style="color:rgba(255,255,255,0.7);">Тіркелу</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Ақпарат</h3>
+                    <ul style="list-style:none; padding:0;">
+                        <li><a href="#" style="color:rgba(255,255,255,0.7);">Ережелер</a></li>
+                        <li><a href="#" style="color:rgba(255,255,255,0.7);">Қан орталықтары</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Байланыс</h3>
+                    <p><i class="fas fa-phone"></i> +7 (7172) 123-456</p>
+                    <p><i class="fas fa-envelope"></i> info@qandos.kz</p>
+                </div>
+            </div>
+            <div style="text-align:center; margin-top:40px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.1);">
+                © 2024 QanDos. Барлық құқықтар қорғалған.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
